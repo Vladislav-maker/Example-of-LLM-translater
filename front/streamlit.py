@@ -68,7 +68,7 @@ if st.button("Translate", key="translate_btn", use_container_width=True):
         with st.spinner("Translating..."):
             try:
                 response = requests.post(
-                    "f"http://{ip_api}:{port_api}/translate",
+                    f"http://{ip_api}:{port_api}/translate",
                     json={
                         "text": source_text,
                         "source_language": LANGUAGES[from_lang],
@@ -108,4 +108,4 @@ if st.button("Translate", key="translate_btn", use_container_width=True):
 try:
     requests.get(f"http://{ip_api}:{port_api}/health", timeout=2)
 except:
-    st.warning("Translation API is not available. Please make sure the API server is running)
+    st.warning("Translation API is not available. Please make sure the API server is running")

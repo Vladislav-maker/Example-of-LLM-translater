@@ -110,7 +110,7 @@ async def process_translation(translation_data: LanguageTranslation) -> Translat
     # формирование инструкции для промта модели
     system_message = (
         f"Translate this text from {translation_data.from_lang} to {translation_data.to_lang}. "
-        f"Maintain original style, line breaks, emojis and punctuation.\n\n"
+        f"Maintain original style, line breaks and punctuation. Don't use emojis\n\n"
     )
 
     try:

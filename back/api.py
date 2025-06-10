@@ -30,7 +30,7 @@ api_service.add_middleware(
 
 TRANSLATION_MODEL = os.getenv("MODEL_NAME", "meta-llama/llama-4-maverick:free") # модель по умолчанию
 OPENROUTER_ENDPOINT = os.getenv("API_URL", "https://openrouter.ai/api/v1/chat/completions")
-AUTH_TOKEN = os.getenv("API_KEY", "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")
+AUTH_TOKEN = os.getenv("API_KEY", "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")
 
 if not AUTH_TOKEN:
     raise RuntimeError("Authorization token is required")

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 altair==5.5.0
 annotated-types==0.7.0
 anyio==4.9.0
@@ -54,3 +55,10 @@ tzdata==2025.2
 urllib3==2.4.0
 uvicorn==0.34.1
 watchdog==6.0.0
+=======
+fastapi>=0.68.0,<0.70.0
+uvicorn>=0.15.0,<0.16.0
+httpx>=0.19.0,<0.20.0
+python-dotenv>=0.19.0,<0.20.0
+pydantic>=1.8.0,<1.9.0
+>>>>>>> 8d35c293f931a46e6d0a14fccd49a3ee48634e5a

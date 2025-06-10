@@ -30,7 +30,7 @@ api_service.add_middleware(
 
 TRANSLATION_MODEL = os.getenv("MODEL_NAME", "meta-llama/llama-4-maverick:free") # модель по умолчанию
 OPENROUTER_ENDPOINT = os.getenv("API_URL", "https://openrouter.ai/api/v1/chat/completions")
-AUTH_TOKEN = os.environ.get("API_KEY")
+AUTH_TOKEN = os.getenv("API_KEY", "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")
 
 if not AUTH_TOKEN:
     raise RuntimeError("Authorization token is required")
@@ -149,7 +149,7 @@ def initialize_service():
     import uvicorn # ASGI сервер
     uvicorn.run(
         api_service,
-        host=os.getenv("HOST", "127.0.0.1"),
+        host=os.getenv("HOST", "0.0.0.0"),
         port=int(os.getenv("PORT", 5000)),
         log_level="info"
     )

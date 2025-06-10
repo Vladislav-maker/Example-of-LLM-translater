@@ -1,0 +1,23 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: back/Dockerfile
+    image: api:latest
+    container_name: api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./back/api.py:/usr/src/app/api.py
+      - ./back/api_key.env:/usr/src/app/api_key.env
+
+  streamlit-web:
+    build:
+      context: .
+      dockerfile: front/Dockerfile
+    image: streamlit:latest
+    container_name: streamlit
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./front/streamlit.py:/usr/src/app/streamlit.py

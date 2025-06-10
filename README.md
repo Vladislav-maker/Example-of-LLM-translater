@@ -15,7 +15,7 @@
 - [Владислав Маринин](https://github.com/Vladislav-maker)
 
 **Демонстрация решения:**
-![Demo GIF](./images/*.gif)
+![Demo GIF](./images/LLM-Переводчик.gif)
 
  - `/translate` — перевод текста с настраиваемыми параметрами
 - `/health` — проверка работоспособности API

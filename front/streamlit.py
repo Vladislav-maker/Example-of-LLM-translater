@@ -7,6 +7,9 @@ st.set_page_config(
     layout="wide"
 )
 
+ip_api = "api"
+port_api = "5000"
+
 st.markdown("""
 <style>
 .header {
@@ -65,7 +68,7 @@ if st.button("Translate", key="translate_btn", use_container_width=True):
         with st.spinner("Translating..."):
             try:
                 response = requests.post(
-                    "http://localhost:8000/translate",
+                    "f"http://{ip_api}:{port_api}/translate",
                     json={
                         "text": source_text,
                         "source_language": LANGUAGES[from_lang],
@@ -103,6 +106,6 @@ if st.button("Translate", key="translate_btn", use_container_width=True):
 
 # Добавим сообщение, если API не доступен
 try:
-    requests.get("http://localhost:8000/health", timeout=2)
+    requests.get(f"http://{ip_api}:{port_api}/health", timeout=2)
 except:
-    st.warning("Translation API is not available. Please make sure the API server is running on http://localhost:8000")
+    st.warning("Translation API is not available. Please make sure the API server is running)

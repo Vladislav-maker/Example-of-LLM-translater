@@ -67,9 +67,9 @@ if st.button("Translate", key="translate_btn", use_container_width=True):
                 response = requests.post(
                     "http://localhost:8000/translate",
                     json={
-                        "content": source_text,
-                        "from_lang": LANGUAGES[from_lang],
-                        "to_lang": LANGUAGES[to_lang]
+                        "text": source_text,
+                        "source_language": LANGUAGES[from_lang],
+                        "target_language": LANGUAGES[to_lang]
                     },
                     timeout=60
                 )

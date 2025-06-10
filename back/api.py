@@ -71,7 +71,7 @@ async def fetch_llm_response(instruction: str, user_input: str) -> Optional[str]
             {"role": "system", "content": instruction},
             {"role": "user", "content": user_input}
         ],
-        "temperature": 0.7,
+        "temperature": 0.0,
     }
 
 # Создание асинхронного HTTP клиента с таймаутом 60 секунд
